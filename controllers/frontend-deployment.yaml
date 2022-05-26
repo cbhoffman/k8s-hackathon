@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-app
+  labels:
+    app: phonebook-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phonebook-app
+  template:
+    metadata:
+      labels:
+        app: phonebook-app
+    spec:
+      containers:
+      - name: frontend-app
+        image: frontend-app:v1.0
+        ports:
+        - containerPort: 8181
+
