@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-app
+  labels:
+    app: phonebook-mysql
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phonebook-mysql
+  template:
+    metadata:
+      labels:
+        app: phonebook-mysql
+    spec:
+      containers:
+      - name: backend-app
+        image: backend-app:v1.0
+        ports:
+        - containerPort: 3306
+
