@@ -5,7 +5,7 @@ metadata:
   labels:
     app: phonebook-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: phonebook-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend-app
-        image: frontend-app:v1.0
+        image: ghcr.io/unix365/frontend-app:v1.0
         ports:
         - containerPort: 8181
 

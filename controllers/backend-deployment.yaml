@@ -5,7 +5,7 @@ metadata:
   labels:
     app: phonebook-mysql
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: phonebook-mysql
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-app
-        image: backend-app:v1.0
+        image: ghcr.io/unix365/backend-app:v1.0
         ports:
         - containerPort: 3306
 
